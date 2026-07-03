@@ -79,6 +79,7 @@ export interface DsnPcb {
       }
       net: string
       type: string
+      padstack_name?: string
     }>
   }
 }

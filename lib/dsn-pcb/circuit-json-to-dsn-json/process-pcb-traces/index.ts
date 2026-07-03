@@ -149,22 +149,22 @@ export function processPcbTraces(
               dsnWrapper.getStructure()!.via = viaPadstackName
             }
 
-          // Create wire segment for via placement
-          dsnWrapper.addWire({
-            path: {
-              layer: layerRefToDsnLayer(currentLayer as LayerRef),
-              width: DEFAULT_VIA_DIAMETER,
-              coordinates: [
-                prevPoint.x * CJ_TO_DSN_SCALE,
-                prevPoint.y * CJ_TO_DSN_SCALE,
-              ],
-            },
-            net: netName,
-            type: "via",
-            padstack_name: viaPadstackName,
-          })
-        }
-        continue
+            // Create wire segment for via placement
+            dsnWrapper.addWire({
+              path: {
+                layer: layerRefToDsnLayer(currentLayer as LayerRef),
+                width: DEFAULT_VIA_DIAMETER,
+                coordinates: [
+                  prevPoint.x * CJ_TO_DSN_SCALE,
+                  prevPoint.y * CJ_TO_DSN_SCALE,
+                ],
+              },
+              net: netName,
+              type: "via",
+              padstack_name: viaPadstackName,
+            })
+          }
+          continue
         }
 
         if (point.route_type === "via") {
